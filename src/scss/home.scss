@@ -1,0 +1,231 @@
+//====================================================================================================
+.page {
+  display: grid;
+  grid-template-columns: toRem(200) 1fr toRem(200);
+  gap: toRem(16);
+}
+.profile {
+  display: flex;
+  flex-direction: column;
+  gap: toRem(22);
+}
+.main {
+  position: relative;
+  border: toRem(1) solid rgba(255, 255, 255, 0.13);
+  width: 100%;
+  img {
+    width: 100%;
+    aspect-ratio: 1328 / 760;
+    overflow: hidden;
+  }
+}
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+//====================================================================================================
+.profile {
+  // .profile__avatar
+  &__avatar {
+    position: relative;
+    border: toRem(1) solid rgba(255, 255, 255, 0.13);
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      width: toRem(164);
+      aspect-ratio: 1 / 1;
+    }
+  }
+  // .profile__description
+  &__description {
+    display: flex;
+    flex-direction: column;
+    gap: toRem(22);
+    flex: 1 1 auto;
+  }
+  // .profile__motto
+  &__motto {
+    display: flex;
+    flex-direction: column;
+    gap: toRem(6);
+  }
+}
+.decor {
+  font-size: toRem(0);
+  // .decor-avatar-profile__01
+  &__01 {
+    position: absolute;
+    top: toRem(-2);
+    left: toRem(-2);
+  }
+  // .decor-avatar-profile__02
+  &__02 {
+    position: absolute;
+    top: toRem(-2);
+    right: toRem(-2);
+    transform: rotate(90deg);
+  }
+  // .decor-avatar-profile__03
+  &__03 {
+    position: absolute;
+    bottom: toRem(-2);
+    right: toRem(-2);
+    transform: rotate(180deg);
+  }
+  // .decor-avatar-profile__04
+  &__04 {
+    position: absolute;
+    bottom: toRem(-2);
+    left: toRem(-2);
+    transform: rotate(-90deg);
+  }
+}
+.description-profile {
+  // .description-profile__item
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: toRem(4);
+  }
+}
+.item-description-profile {
+  // .item-description-profile__lable
+  &__lable {
+    font-size: toRem(14);
+    font-family: "Iceland";
+    color: #fff;
+    letter-spacing: toRem(1);
+    text-transform: uppercase;
+  }
+  // .item-description-profile__characteristic
+  &__characteristic {
+    font-size: toRem(18);
+    color: $redColor;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: toRem(1.35);
+    &--black {
+      color: #000;
+    }
+  }
+}
+.motto-profile {
+  font-family: "Iceland";
+  // .motto-profile__lable
+  &__lable {
+    font-size: toRem(18);
+    color: $redColor;
+    text-transform: uppercase;
+    letter-spacing: toRem(1.35);
+  }
+  // .motto-profile__text
+  &__text {
+    font-size: toRem(16);
+    letter-spacing: toRem(1.2);
+    text-transform: uppercase;
+  }
+}
+//========================================================================================================================================================
+.info {
+  // .info__about
+  &__about {
+    border-left: toRem(2) solid $redColor;
+  }
+  // .info__buttons
+  &__settings {
+    display: flex;
+    flex-direction: column;
+    gap: toRem(13);
+  }
+}
+.about-info {
+  // .about-info__title
+  &__title {
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: toRem(1.35);
+    font-size: toRem(18);
+    padding-inline-start: toRem(10);
+  }
+  // .about-info__sub-title
+  &__sub-title {
+    font-family: "Iceland";
+    font-size: toRem(14);
+    background: rgb(232, 74, 74, 0.1);
+    padding-block: toRem(8);
+    padding-inline-start: toRem(10);
+    text-transform: uppercase;
+    margin-block-end: toRem(15);
+  }
+  // .about-info__item
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: toRem(4);
+    padding-inline-start: toRem(10);
+    &:not(:last-child) {
+      margin-block-end: toRem(23);
+    }
+  }
+}
+
+.item-about-info {
+  // .item-about-info__lable
+  &__lable {
+    font-size: toRem(14);
+    font-family: "Iceland";
+    color: #fff;
+    letter-spacing: toRem(1);
+    text-transform: uppercase;
+  }
+  // .item-about-info__characteristic
+  &__characteristic {
+    font-size: toRem(18);
+    color: $redColor;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: toRem(1.35);
+  }
+  // .item-about-info__text
+  &__text {
+    font-family: "Iceland";
+    text-transform: uppercase;
+  }
+  // .item-about-info__wrap
+  &__wrap {
+    display: grid;
+    grid-template-columns: repeat(4, toRem(40));
+    justify-content: space-between;
+    row-gap: toRem(8);
+    padding-block-start: toRem(4);
+  }
+  // .item-about-info__image
+  &__image {
+    width: toRem(40);
+    img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+    }
+  }
+}
+
+.settings-info {
+  // .buttons-info__button
+  &__button {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__lable{
+    font-size: toRem(14);
+    font-family: "Iceland";
+    color: #fff;
+    letter-spacing: toRem(1);
+    text-transform: uppercase;
+  }
+}

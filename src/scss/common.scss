@@ -1,0 +1,38 @@
+// Заголовки, загальні БЕМ блоки та інше...
+.hexagon-decor {
+  background: $redColorOpacity url("@img/decor/hexagons.svg") 106% 50% / 40px
+    40px no-repeat; /* Колір фону */
+  color: #000;
+  padding-inline: toRem(4);
+  padding-block: toRem(4);
+  transition: all 0.3s;
+  &--hover {
+    @media (any-hover: hover) {
+      &:hover {
+        color: $redColor;
+        background: #000 url("@img/decor/hexagons-red.svg") 106% 50% / 40px 40px
+          no-repeat; /* Колір фону */
+      }
+    }
+  }
+}
+
+.button {
+  padding-inline: toRem(4);
+  padding-block: toRem(4);
+  border: toRem(1) solid $redColor;
+  display: flex;
+  justify-items: start;
+  transition: all 0.3s;
+  font-size: toRem(18);
+  color: $redColor;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: toRem(1.35);
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: $redColor;
+      color: #000;
+    }
+  }
+}
