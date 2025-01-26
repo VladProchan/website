@@ -3,6 +3,11 @@
   display: grid;
   grid-template-columns: toRem(200) 1fr toRem(200);
   gap: toRem(16);
+  padding-inline: toRem(80);
+  padding-block: toRem(92);
+  height: 100vh;
+  position: relative;
+  overflow: auto;
 }
 .profile {
   display: flex;
@@ -10,15 +15,24 @@
   gap: toRem(22);
 }
 .main {
+  
+  overflow: hidden;
   position: relative;
-  border: toRem(1) solid rgba(255, 255, 255, 0.13);
-  width: 100%;
-  img {
+  margin: toRem(-2);
+  padding: toRem(2);
+  &__content{
+    border: toRem(1) solid rgba(255, 255, 255, 0.13);
+    position: relative;
     width: 100%;
-    aspect-ratio: 1328 / 760;
-    overflow: hidden;
+    height: 100%;
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
 }
+
 .info {
   display: flex;
   flex-direction: column;
@@ -55,36 +69,7 @@
     gap: toRem(6);
   }
 }
-.decor {
-  font-size: toRem(0);
-  // .decor-avatar-profile__01
-  &__01 {
-    position: absolute;
-    top: toRem(-2);
-    left: toRem(-2);
-  }
-  // .decor-avatar-profile__02
-  &__02 {
-    position: absolute;
-    top: toRem(-2);
-    right: toRem(-2);
-    transform: rotate(90deg);
-  }
-  // .decor-avatar-profile__03
-  &__03 {
-    position: absolute;
-    bottom: toRem(-2);
-    right: toRem(-2);
-    transform: rotate(180deg);
-  }
-  // .decor-avatar-profile__04
-  &__04 {
-    position: absolute;
-    bottom: toRem(-2);
-    left: toRem(-2);
-    transform: rotate(-90deg);
-  }
-}
+
 .description-profile {
   // .description-profile__item
   &__item {

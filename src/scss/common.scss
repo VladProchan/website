@@ -36,3 +36,39 @@
     }
   }
 }
+
+.decor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: toRem(0);
+  // .decor-avatar-profile__01
+  &__01 {
+    position: absolute;
+    top: toRem(-2);
+    left: toRem(-2);
+  }
+  // .decor-avatar-profile__02
+  &__02 {
+    position: absolute;
+    top: toRem(-2);
+    right: toRem(-2);
+    transform: rotate(90deg);
+  }
+  // .decor-avatar-profile__03
+  &__03 {
+    position: absolute;
+    bottom: toRem(-2);
+    right: toRem(-2);
+    transform: rotate(180deg);
+  }
+  // .decor-avatar-profile__04
+  &__04 {
+    position: absolute;
+    bottom: toRem(-2);
+    left: toRem(-2);
+    transform: rotate(-90deg);
+  }
+}
