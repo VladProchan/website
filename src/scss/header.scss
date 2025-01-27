@@ -4,7 +4,6 @@
   padding-inline: toRem(80);
   top: 0;
   left: 0;
-
   // .header__container
   &__container {
     display: flex;
@@ -36,6 +35,7 @@
     font-size: toRem(26);
     letter-spacing: toRem(2);
     color: var(--green-color);
+    transition: all 0.3s;
   }
   // .item-header__text
   &__text {
@@ -53,5 +53,6 @@
   // .clock-header__time
   &__time {
     color: var(--white-text-color);
+    transition: all 0.3s;
   }
 }
