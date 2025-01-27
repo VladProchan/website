@@ -1,17 +1,28 @@
 // Заголовки, загальні БЕМ блоки та інше...
 .hexagon-decor {
-  background: $redColorOpacity url("@img/decor/hexagons.svg") 106% 50% / 40px
-    40px no-repeat; /* Колір фону */
-  color: #000;
+  background: var(--primari-opaciti07-color); /* Колір фону */
+  color: var(--black-color);
   padding-inline: toRem(4);
   padding-block: toRem(4);
   transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  svg{
+    position: absolute;
+    top: -25%;
+    right: -5%;
+    width: toRem(40);
+    height: toRem(40);
+    fill: var(--black-text-color);
+  }
   &--hover {
     @media (any-hover: hover) {
       &:hover {
-        color: $redColor;
-        background: #000 url("@img/decor/hexagons-red.svg") 106% 50% / 40px 40px
-          no-repeat; /* Колір фону */
+        color: var(--primary-text-color);
+        background: var(--black-color); /* Колір фону */
+        svg{
+          fill: var(--primary-text-color);
+        }
       }
     }
   }
@@ -20,19 +31,19 @@
 .button {
   padding-inline: toRem(4);
   padding-block: toRem(4);
-  border: toRem(1) solid $redColor;
+  border: toRem(1) solid var(--primary-color);
   display: flex;
   justify-items: start;
   transition: all 0.3s;
   font-size: toRem(18);
-  color: $redColor;
+  color: var(--primary-color);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: toRem(1.35);
   @media (any-hover: hover) {
     &:hover {
-      background-color: $redColor;
-      color: #000;
+      background-color: var(--primary-color);
+      color: var(--black-color);
     }
   }
 }
@@ -44,6 +55,11 @@
   width: 100%;
   height: 100%;
   font-size: toRem(0);
+  svg{
+    path{
+      stroke: var(--primary-color);
+    }
+  }
   // .decor-avatar-profile__01
   &__01 {
     position: absolute;

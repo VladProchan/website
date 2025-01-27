@@ -8,6 +8,7 @@
   height: 100vh;
   position: relative;
   overflow: auto;
+
 }
 .profile {
   display: flex;
@@ -15,17 +16,16 @@
   gap: toRem(22);
 }
 .main {
-  
   overflow: hidden;
   position: relative;
   margin: toRem(-2);
   padding: toRem(2);
-  &__content{
-    border: toRem(1) solid rgba(255, 255, 255, 0.13);
+  &__content {
+    border: toRem(1) solid var(--border-color);
     position: relative;
     width: 100%;
     height: 100%;
-    img{
+    img {
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -44,7 +44,7 @@
   // .profile__avatar
   &__avatar {
     position: relative;
-    border: toRem(1) solid rgba(255, 255, 255, 0.13);
+    border: toRem(1) solid var(--border-color);
     width: 100%;
     aspect-ratio: 1 / 1;
     display: flex;
@@ -83,19 +83,19 @@
   &__lable {
     font-size: toRem(14);
     font-family: "Iceland";
-    color: #fff;
+    color: var(--white-text-color);
     letter-spacing: toRem(1);
     text-transform: uppercase;
   }
   // .item-description-profile__characteristic
   &__characteristic {
     font-size: toRem(18);
-    color: $redColor;
+    color: var(--primary-text-color);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: toRem(1.35);
     &--black {
-      color: #000;
+      color: var(--black-text-color);
     }
   }
 }
@@ -104,7 +104,7 @@
   // .motto-profile__lable
   &__lable {
     font-size: toRem(18);
-    color: $redColor;
+    color: var(--primary-text-color);
     text-transform: uppercase;
     letter-spacing: toRem(1.35);
   }
@@ -119,7 +119,7 @@
 .info {
   // .info__about
   &__about {
-    border-left: toRem(2) solid $redColor;
+    border-left: toRem(2) solid var(--primary-color);
   }
   // .info__buttons
   &__settings {
@@ -131,7 +131,7 @@
 .about-info {
   // .about-info__title
   &__title {
-    color: #fff;
+    color: var(--white-text-color);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: toRem(1.35);
@@ -142,7 +142,7 @@
   &__sub-title {
     font-family: "Iceland";
     font-size: toRem(14);
-    background: rgb(232, 74, 74, 0.1);
+    background: var(--primari-opaciti01-color);
     padding-block: toRem(8);
     padding-inline-start: toRem(10);
     text-transform: uppercase;
@@ -165,14 +165,14 @@
   &__lable {
     font-size: toRem(14);
     font-family: "Iceland";
-    color: #fff;
+    color: var(--white-text-color);
     letter-spacing: toRem(1);
     text-transform: uppercase;
   }
   // .item-about-info__characteristic
   &__characteristic {
     font-size: toRem(18);
-    color: $redColor;
+    color: var(--primary-text-color);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: toRem(1.35);
@@ -193,9 +193,41 @@
   // .item-about-info__image
   &__image {
     width: toRem(40);
-    img {
+    aspect-ratio: 1 / 1;
+    position: relative;
+  }
+}
+.image-item-about-info {
+  // .image-item-about-info__poligon
+  &__poligon {
+    width: 100%;
+    svg{
       width: 100%;
-      aspect-ratio: 1 / 1;
+      height: 100%;
+      path{
+        stroke: var(--primary-color);
+      }
+    }
+  }
+  // .image-item-about-info__icon
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    width: toRem(20);
+    height: toRem(20);
+    transform: translate(-50%, -50%);
+    object-fit: contain;
+    svg{
+      fill: var(--primary-color);
+      path{
+        fill: var(--primary-color);
+      }
     }
   }
 }
@@ -206,10 +238,10 @@
     display: flex;
     justify-content: space-between;
   }
-  &__lable{
+  &__lable {
     font-size: toRem(14);
     font-family: "Iceland";
-    color: #fff;
+    color: var(--white-color);
     letter-spacing: toRem(1);
     text-transform: uppercase;
   }
