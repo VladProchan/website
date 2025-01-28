@@ -1,14 +1,18 @@
 //====================================================================================================
 .page {
-  display: grid;
-  grid-template-columns: toRem(200) 1fr toRem(200);
-  gap: toRem(16);
-  padding-inline: toRem(80);
-  padding-block: toRem(92);
   height: 100vh;
-  position: relative;
   overflow: auto;
-
+  position: relative;
+  padding-inline: toRem(80);
+    padding-block: toRem(92);
+  &__wrap {
+    min-height: 100%;
+    display: grid;
+    
+    grid-template-columns: toRem(200) 1fr toRem(200);
+    gap: toRem(16);
+    position: relative;
+  }
 }
 .profile {
   display: flex;
@@ -21,15 +25,6 @@
   margin: toRem(-2);
   padding: toRem(2);
   &__content {
-    border: toRem(1) solid var(--border-color);
-    position: relative;
-    width: 100%;
-    height: 100%;
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
   }
 }
 
@@ -117,6 +112,23 @@
   }
 }
 //========================================================================================================================================================
+.main {
+  // .main__content
+  &__content {
+    border: toRem(1) solid var(--border-color);
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  &__section {
+    display: none;
+    &.active-tab{
+      display: block;
+    }
+  }
+}
+
+//========================================================================================================================================================
 .info {
   // .info__about
   &__about {
@@ -203,10 +215,10 @@
   // .image-item-about-info__poligon
   &__poligon {
     width: 100%;
-    svg{
+    svg {
       width: 100%;
       height: 100%;
-      path{
+      path {
         stroke: var(--primary-color);
       }
     }
@@ -225,9 +237,9 @@
     height: toRem(20);
     transform: translate(-50%, -50%);
     object-fit: contain;
-    svg{
+    svg {
       fill: var(--primary-color);
-      path{
+      path {
         fill: var(--primary-color);
       }
     }
@@ -246,5 +258,67 @@
     color: var(--white-color);
     letter-spacing: toRem(1);
     text-transform: uppercase;
+  }
+}
+//========================================================================================================================================================
+.navigation {
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: toRem(15);
+  align-items: stretch;
+  @media (max-width:$mobile){
+    background-color: var(--bg-color);
+    padding: toRem(8); 
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    border: toRem(1) solid #333;
+  }
+  // .navigation__button
+  &__button {
+    display: flex;
+    flex-direction: column;
+    border-left: toRem(2) solid var(--gray-opaciti07-color);
+    width: toRem(150);
+    transition: all 0.3s;
+    &.active-tab {
+      border-left: toRem(2) solid var(--primary-color);
+    }
+    @media (max-width:$mobile){
+       width: 100%; 
+    }
+    @media (any-hover: hover) {
+      &:hover {
+        border-left: toRem(2) solid var(--primary-color);
+        .hexagon-decor {
+          background: var(--primari-opaciti07-color); /* Колір фону */
+        }
+      }
+    }
+  }
+  // .navigation__title
+  &__title {
+    width: 100%;
+    display: flex;
+    color: var(--white-text-color);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: toRem(1.35);
+    font-size: toRem(18);
+    padding-inline-start: toRem(8);
+  }
+  // .navigation__sub-title
+  &__sub-title {
+    padding-inline: toRem(8);
+    padding-block: toRem(8);
+    font-family: "Iceland";
+    font-size: toRem(14);
+    background-color: var(--gray-opaciti01-color);
+    width: 100%;
+    display: flex;
+    flex: 1 1 auto;
+    text-align: left;
   }
 }

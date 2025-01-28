@@ -1,17 +1,27 @@
 .menu {
+  @media (min-width:$mobile){
+    position: absolute;
+    bottom: toRem(48);
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+  @media (max-width:$mobile){
+    padding-block-start: toRem(20);
+  }
 	// .menu__icon
 	&__icon {
 	}
 	// .menu__body
 	&__body {
 		@media (max-width: $mobile) {
+      
 			position: fixed;
 			width: 100%;
-			height: 100%;
+			height: 85%;
 			left: -100%;
 			top: 0;
-			overflow: auto;
-			padding: toRem(50) toRem(15) toRem(15) toRem(30);
+			overflow: scroll;
+			padding: toRem(8) toRem(8) toRem(8) toRem(8);
 			transition: left 0.3s;
 			&::before {
 				content: "";
@@ -50,49 +60,20 @@
 .icon-menu {
 	display: none;
 	@media (max-width: $mobile) {
+
 		display: block;
 		position: relative;
-		width: toRem(30);
-		height: toRem(18);
 		z-index: 5;
-		@media (any-hover: none) {
-			cursor: default;
-		}
-		span,
-		&::before,
-		&::after {
-			content: "";
-			transition: all 0.3s ease 0s;
-			right: 0;
-			position: absolute;
-			width: 100%;
-			height: toRem(2);
-			background-color: #000;
-		}
-		&::before {
-			top: 0;
-		}
-		&::after {
-			bottom: 0;
-		}
-		span {
-			top: calc(50% - toRem(1));
-		}
+		background-color: var(--primary-color);
+    color: var(--black-text-color);
+    padding-block: toRem(6);
+    width: 100%;
+    font-size: toRem(18);
+    text-transform: uppercase;
+    letter-spacing: toRem(1.35);
+    font-weight: 700;
 		.menu-open & {
-			span {
-				width: 0;
-			}
-			&::before,
-			&::after {
-			}
-			&::before {
-				top: calc(50% - toRem(1));
-				transform: rotate(-45deg);
-			}
-			&::after {
-				bottom: calc(50% - toRem(1));
-				transform: rotate(45deg);
-			}
+			
 		}
 	}
 }

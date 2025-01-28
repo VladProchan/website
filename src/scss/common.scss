@@ -1,30 +1,29 @@
 // Заголовки, загальні БЕМ блоки та інше...
 .hexagon-decor {
-  background: var(--primari-opaciti07-color); /* Колір фону */
+  background: var(--gray-opaciti07-color); /* Колір фону */
   color: var(--black-color);
   padding-inline: toRem(4);
   padding-block: toRem(4);
   transition: all 0.3s;
   position: relative;
   overflow: hidden;
-  svg{
+  transition: all 0.3s;
+  svg {
     position: absolute;
     top: -25%;
-    right: -5%;
+    right: toRem(-10);
     width: toRem(40);
     height: toRem(40);
     fill: var(--black-text-color);
+    transition: all 0.3s;
+
   }
-  &--hover {
-    @media (any-hover: hover) {
-      &:hover {
-        color: var(--primary-text-color);
-        background: var(--black-color); /* Колір фону */
-        svg{
-          fill: var(--primary-text-color);
-        }
-      }
-    }
+  .active-tab & {
+    background: var(--primari-opaciti07-color); /* Колір фону */
+    color: var(--white-text-color);
+  }
+  &--red{
+    background: var(--primari-opaciti07-color);
   }
 }
 
@@ -55,8 +54,9 @@
   width: 100%;
   height: 100%;
   font-size: toRem(0);
-  svg{
-    path{
+  z-index: -1;
+  svg {
+    path {
       stroke: var(--primary-color);
     }
   }
