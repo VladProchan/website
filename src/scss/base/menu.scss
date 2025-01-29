@@ -34,11 +34,11 @@
     &::before{
       content:'';
       position: absolute;
-      top: toRem(-8);
+      top: toRem(-9);
       left: 50%;
       transform: translate(-50%, 0);
       width: toRem(9);
-      height: toRem(8);
+      height: toRem(9);
       background: var(--primary-color);
       clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
       transition: all 0.3s;

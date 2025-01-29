@@ -409,7 +409,9 @@
     }));
     document.querySelector(".description-profile__icon-close").addEventListener("click", (function() {
         var block = document.querySelector(".profile__description");
+        var button = document.querySelector(".menu__about-icon");
         block.classList.toggle("active-info");
+        button.classList.toggle("active-info");
     }));
     window["FLS"] = true;
     menuInit();

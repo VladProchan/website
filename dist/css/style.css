@@ -183,12 +183,12 @@ body {
 .menu__about-icon::before {
   content: "";
   position: absolute;
-  top: -.5rem;
+  top: -.5625rem;
   left: 50%;
   -webkit-transform: translate(-50%,0);
   transform: translate(-50%,0);
   width: .5625rem;
-  height: .5rem;
+  height: .5625rem;
   background: var(--primary-color);
   clip-path: polygon(50% 0,0 100%,100% 100%);
   transition: all .3s;
