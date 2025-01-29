@@ -424,6 +424,14 @@ export function menuInit() {
 				document.documentElement.classList.toggle("menu-open");
 			}
 		});
+  };
+  if (document.querySelector(".icon-menu-close")) {
+		document.addEventListener("click", function (e) {
+			if (bodyLockStatus && e.target.closest('.icon-menu-close')) {
+				bodyLockToggle();
+				document.documentElement.classList.toggle("menu-open");
+			}
+		});
 	};
 }
 export function menuOpen() {
@@ -434,6 +442,7 @@ export function menuClose() {
 	bodyUnlock();
 	document.documentElement.classList.remove("menu-open");
 }
+
 // Модуль "показати ще" =======================================================================================================================================================================================================================
 export function showMore() {
 	window.addEventListener("load", function (e) {

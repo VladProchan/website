@@ -1,27 +1,26 @@
 .menu {
-  @media (min-width:$mobile){
+  @media (min-width:$tablet){
     position: absolute;
-    bottom: toRem(48);
+    bottom: toRem(-43);
     left: 50%;
     transform: translate(-50%, 0);
+    z-index: 5;
   }
-  @media (max-width:$mobile){
-    padding-block-start: toRem(20);
+  @media (max-width:$tablet){
+    order: 3;
   }
 	// .menu__icon
 	&__icon {
 	}
 	// .menu__body
 	&__body {
-		@media (max-width: $mobile) {
-      
+		@media (max-width: $tablet) {
 			position: fixed;
 			width: 100%;
-			height: 85%;
+			height: 100%;
 			left: -100%;
 			top: 0;
-			overflow: scroll;
-			padding: toRem(8) toRem(8) toRem(8) toRem(8);
+			padding: toRem(23) toRem(23) toRem(80) toRem(23);
 			transition: left 0.3s;
 			&::before {
 				content: "";
@@ -40,10 +39,13 @@
 				}
 			}
 		}
+    @media (max-width:$mobile){
+      padding: toRem(8) toRem(8) toRem(49) toRem(8);
+    }
 	}
 	// .menu__list
 	&__list {
-		@media (max-width: $mobile) {
+		@media (max-width: $tablet) {
 		}
 	}
 	// .menu__item
@@ -51,29 +53,51 @@
 	}
 	// .menu__link
 	&__link {
-		@media (max-width: $mobile) {
+		@media (max-width: $tablet) {
 		}
 	}
 }
 
 //Burger Icon
+.icon-menu-close{
+  width: toRem(24);
+  aspect-ratio: 1 / 1;
+  z-index: 5;
+}
+
 .icon-menu {
 	display: none;
-	@media (max-width: $mobile) {
-
+	@media (max-width: $tablet) {
 		display: block;
 		position: relative;
 		z-index: 5;
 		background-color: var(--primary-color);
     color: var(--black-text-color);
-    padding-block: toRem(6);
+    padding-block: toRem(15);
     width: 100%;
     font-size: toRem(18);
     text-transform: uppercase;
     letter-spacing: toRem(1.35);
     font-weight: 700;
+    &::before{
+      content:'';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, 0);
+      width: toRem(9);
+      height: toRem(9);
+      background: var(--primary-color);
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+      transition: all 0.3s;
+    }
 		.menu-open & {
-			
+      &::before{
+        top: toRem(-8);
+      }
 		}
 	}
+  @media (max-width:$mobile){
+    padding-block: toRem(7);
+  }
 }

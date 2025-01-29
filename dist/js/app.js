@@ -208,6 +208,12 @@
                 document.documentElement.classList.toggle("menu-open");
             }
         }));
+        if (document.querySelector(".icon-menu-close")) document.addEventListener("click", (function(e) {
+            if (bodyLockStatus && e.target.closest(".icon-menu-close")) {
+                bodyLockToggle();
+                document.documentElement.classList.toggle("menu-open");
+            }
+        }));
     }
     function uniqArray(array) {
         return array.filter((function(item, index, self) {

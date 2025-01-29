@@ -166,6 +166,11 @@ body {
   min-width: 0;
   grid-column: 3/4
 }
+.icon-menu-close {
+  width: 1.5rem;
+  aspect-ratio: 1/1;
+  z-index: 5
+}
 .icon-menu {
   display: none
 }
@@ -321,17 +326,13 @@ body {
   transition: all .3s
 }
 .page {
-  height: 100vh;
+  height: 100svh;
   overflow: auto;
   position: relative;
   padding-inline: 5rem;
   padding-block: 5.75rem
 }
 .page__wrap {
-  min-height: 100%;
-  display: grid;
-  grid-template-columns: 12.5rem 1fr 12.5rem;
-  gap: 1rem;
   position: relative
 }
 .profile {
@@ -415,7 +416,7 @@ body {
   border: .0625rem solid var(--border-color);
   position: relative;
   width: 100%;
-  height: 100%
+  min-height: 100%
 }
 .main__section {
   display: none
@@ -540,9 +541,24 @@ body {
 .navigation {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: .9375rem;
   align-items: stretch
+}
+.navigation__header {
+  display: flex;
+  height: 3.125rem;
+  align-items: center;
+  border-bottom: .0625rem solid #333;
+  width: calc(100% + 2.625rem);
+  padding-inline: 1.3125rem;
+  justify-content: space-between
+}
+.navigation__name-block {
+  color: var(--white-text-color);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .125rem;
+  font-size: 1.625rem
 }
 .navigation__button {
   display: flex;
@@ -577,27 +593,37 @@ body {
   text-align: left
 }
 @media (min-width:47.99875em) {
-  .menu {
-    position: absolute;
-    bottom: 3rem;
-    left: 50%;
-    -webkit-transform: translate(-50%,0);
-    transform: translate(-50%,0)
+  .navigation__header {
+    display: none
   }
 }
-@media (max-width:47.99875em) {
+@media (min-width:61.99875em) {
   .menu {
-    -webkit-padding-before: 1.25rem;
-    padding-block-start: 1.25rem
+    position: absolute;
+    bottom: -2.6875rem;
+    left: 50%;
+    -webkit-transform: translate(-50%,0);
+    transform: translate(-50%,0);
+    z-index: 5
+  }
+  .page__wrap {
+    min-height: 100%;
+    display: grid;
+    grid-template-columns: 12.5rem 1fr 12.5rem;
+    gap: 1rem
+  }
+}
+@media (max-width:61.99875em) {
+  .menu {
+    order: 3
   }
   .menu__body {
     position: fixed;
     width: 100%;
-    height: 85%;
+    height: 100%;
     left: -100%;
     top: 0;
-    overflow: scroll;
-    padding: .5rem .5rem .5rem .5rem;
+    padding: 1.4375rem 1.4375rem 5rem 1.4375rem;
     transition: left .3s
   }
   .menu__body::before {
@@ -622,16 +648,73 @@ body {
     z-index: 5;
     background-color: var(--primary-color);
     color: var(--black-text-color);
-    padding-block: .375rem;
+    padding-block: .9375rem;
     width: 100%;
     font-size: 1.125rem;
     text-transform: uppercase;
     letter-spacing: .084375rem;
     font-weight: 700
   }
+  .icon-menu::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    -webkit-transform: translate(-50%,0);
+    transform: translate(-50%,0);
+    width: .5625rem;
+    height: .5625rem;
+    background: var(--primary-color);
+    clip-path: polygon(50% 0,0 100%,100% 100%);
+    transition: all .3s
+  }
+  .menu-open .icon-menu::before {
+    top: -.5rem
+  }
+  .header {
+    padding-inline: 1.5rem
+  }
+  .page {
+    padding-inline: 1.5rem;
+    -webkit-padding-before: 5.75rem;
+    padding-block-start: 5.75rem;
+    -webkit-padding-after: 1.5rem;
+    padding-block-end: 1.5rem
+  }
+  .page__wrap {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: 1.6875rem
+  }
+  .profile {
+    order: 2;
+    flex-direction: row;
+    justify-content: space-between
+  }
+  .main {
+    order: 1;
+    flex: 1 1 auto
+  }
+  .info {
+    display: none
+  }
+  .profile__avatar img {
+    width: 6.875rem
+  }
+  .profile__avatar {
+    width: 9.375rem
+  }
+  .profile__description {
+    display: grid;
+    grid-template-columns: repeat(3,1fr)
+  }
+  .profile__motto {
+    display: none
+  }
   .navigation {
     background-color: var(--bg-color);
-    padding: .5rem;
+    padding: 0 1.3125rem 1.3125rem 1.3125rem;
     height: 100%;
     flex-direction: column;
     align-items: center;
@@ -639,6 +722,31 @@ body {
   }
   .navigation__button {
     width: 100%
+  }
+}
+@media (max-width:47.99875em) {
+  .menu__body {
+    padding: .5rem .5rem 3.0625rem .5rem
+  }
+  .icon-menu {
+    padding-block: .4375rem
+  }
+  .header__container {
+    height: 2.0625rem;
+    width: 100%
+  }
+  .page {
+    padding-inline: .5625rem;
+    padding-block: .5625rem
+  }
+  .page__wrap {
+    gap: .9375rem
+  }
+  .profile__avatar {
+    display: none
+  }
+  .profile__description {
+    display: flex
   }
 }
 @media (any-hover:hover) {

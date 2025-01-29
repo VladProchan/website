@@ -4,12 +4,19 @@
   padding-inline: toRem(80);
   top: 0;
   left: 0;
+  @media (max-width:$tablet){
+    padding-inline: toRem(24);
+  }
   // .header__container
   &__container {
     display: flex;
     justify-content: space-between;
     height: toRem(90);
     align-items: center;
+    @media (max-width:$mobile){
+       height: toRem(33); 
+       width: 100%;
+    }
   }
   // .header__indicators
   &__indicators {
