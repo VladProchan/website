@@ -5,30 +5,30 @@
   position: relative;
   padding-inline: toRem(80);
   padding-block: toRem(92);
-  @media (max-width:$tablet){
+  @media (max-width: $tablet) {
     padding-inline: toRem(24);
     padding-block-start: toRem(92);
     padding-block-end: toRem(24);
   }
-  @media (max-width:$mobile){
+  @media (max-width: $mobile) {
     padding-inline: toRem(9);
-    padding-block: toRem(9); 
+    padding-block: toRem(9);
   }
   &__wrap {
-    @media (min-width:$tablet){
+    @media (min-width: $tablet) {
       min-height: 100%;
       display: grid;
       grid-template-columns: toRem(200) 1fr toRem(200);
       gap: toRem(16);
     }
-    @media (max-width:$tablet){
+    @media (max-width: $tablet) {
       display: flex;
       flex-direction: column;
       height: 100%;
       gap: toRem(27);
     }
-    @media (max-width:$mobile){
-       gap: toRem(15); 
+    @media (max-width: $mobile) {
+      gap: toRem(15);
     }
     position: relative;
   }
@@ -37,19 +37,17 @@
   display: flex;
   flex-direction: column;
   gap: toRem(22);
-  @media (max-width:$tablet){
+  @media (max-width: $tablet) {
     order: 2;
     flex-direction: row;
-    justify-content: space-between;
   }
-  
 }
 .main {
   overflow: hidden;
   position: relative;
   margin: toRem(-2);
   padding: toRem(2);
-  @media (max-width:$tablet){
+  @media (max-width: $tablet) {
     order: 1;
     flex: 1 1 auto;
   }
@@ -59,7 +57,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  @media (max-width:$tablet){
+  @media (max-width: $tablet) {
     display: none;
   }
 }
@@ -69,7 +67,7 @@
   // .profile__avatar
   &__avatar {
     position: relative;
-    border: toRem(1) solid var(--border-color);
+    border: toRem(1) solid var(--border-opaciti-color);
     width: 100%;
     aspect-ratio: 1 / 1;
     display: flex;
@@ -78,37 +76,45 @@
     img {
       width: toRem(164);
       aspect-ratio: 1 / 1;
-      @media (max-width:$tablet){
+      @media (max-width: $tablet) {
         width: toRem(110);
       }
     }
-    @media (max-width:$tablet){
+    @media (max-width: $tablet) {
       width: toRem(150);
     }
-    @media (max-width:$mobile){
-       display: none; 
+    @media (max-width: $mobile) {
+      display: none;
     }
   }
   // .profile__description
   &__description {
-    display: flex;
-    flex-direction: column;
-    gap: toRem(22);
-    flex: 1 1 auto;
-    @media (max-width:$tablet){
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
+    @media (max-width: $mobile) {
+      display: flex;
+      position: fixed;
+			width: 100%;
+			height: 100%;
+			left: 100%;
+			top: 0;
+			transition: left 0.3s;
+      padding: toRem(8) toRem(8) toRem(51) toRem(8);
+      z-index: 5;
+			&.active-info {
+				left: 0;
+			}
     }
-    @media (max-width:$mobile){
-       display: flex; 
-    }
+
+  }
+  &__wrap{
+    
+
   }
   // .profile__motto
   &__motto {
     display: flex;
     flex-direction: column;
     gap: toRem(6);
-    @media (max-width:$tablet){
+    @media (max-width: $tablet) {
       display: none;
     }
   }
@@ -120,6 +126,59 @@
     display: flex;
     flex-direction: column;
     gap: toRem(4);
+  }
+  &__wrap{
+    border: toRem(1) solid var(--border-color);
+    background: var(--bg-color);
+    padding: toRem(0) toRem(21) toRem(21) toRem(21);
+    height: 100%;
+    width: 100%;
+  }
+  &__header{
+    @media (min-width:$mobile){
+       display: none; 
+    }
+    @media (max-width:$mobile){
+      display: flex;
+      height: toRem(50);
+      align-items: center;
+      border-bottom: toRem(1) solid var(--border-color);
+      width: calc(100% + toRem(42));
+      margin-inline-start: toRem(-21);
+      padding-inline: toRem(21);
+      justify-content: space-between;
+      @media (min-width: $mobile) {
+        display: none;
+      }
+      svg{
+        path{
+            fill: var(--white-text-color);
+            transition: fill 0.3s;
+        }
+      }
+    }
+  }
+  &__list{
+    display: flex;
+    flex-direction: column;
+    gap: toRem(22);
+    flex: 1 1 auto;
+    @media (max-width: $tablet) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @media (max-width:$mobile){
+      display: flex;
+      padding-block-start: toRem(21);
+    }
+  }
+  &__name-block{
+    color: var(--white-text-color);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: toRem(2);
+    font-size: toRem(26);
+    transition: color 0.3s;
   }
 }
 .item-description-profile {
@@ -164,14 +223,14 @@
 .main {
   // .main__content
   &__content {
-    border: toRem(1) solid var(--border-color);
+    border: toRem(1) solid var(--border-opaciti-color);
     position: relative;
     width: 100%;
     min-height: 100%;
   }
   &__section {
     display: none;
-    &.active-tab{
+    &.active-tab {
       display: block;
     }
   }
@@ -188,6 +247,9 @@
     display: flex;
     flex-direction: column;
     gap: toRem(13);
+    @media (max-width: $mobile) {
+      width: 100%;
+    }
   }
 }
 .about-info {
@@ -304,7 +366,7 @@
   &__lable {
     font-size: toRem(14);
     font-family: "Iceland";
-    color: var(--white-color);
+    color: var(--white-text-color);
     letter-spacing: toRem(1);
     text-transform: uppercase;
   }
@@ -315,34 +377,53 @@
   align-items: center;
   gap: toRem(15);
   align-items: stretch;
-  &__header{
+  &__header {
     display: flex;
     height: toRem(50);
     align-items: center;
-    border-bottom: toRem(1) solid #333;
+    border-bottom: toRem(1) solid var(--border-color);
     width: calc(100% + toRem(42));
     padding-inline: toRem(21);
     justify-content: space-between;
-    @media (min-width:$mobile){
-       display: none; 
+    @media (min-width: $mobile) {
+      display: none;
+    }
+    svg{
+      path{
+          fill: var(--white-text-color);
+          transition: fill 0.3s;
+      }
     }
   }
-  &__name-block{
+  &__name-block {
     color: var(--white-text-color);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: toRem(2);
     font-size: toRem(26);
+    transition: color 0.3s;
   }
-  @media (max-width:$tablet){
+  @media (max-width: $tablet) {
     background-color: var(--bg-color);
     padding: toRem(0) toRem(21) toRem(21) toRem(21);
     height: 100%;
     flex-direction: column;
     align-items: center;
-    border: toRem(1) solid #333;
+    border: toRem(1) solid var(--border-color);
+    transition: all 0.3s;
   }
 
+  &__list {
+    flex: 1 1 auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: toRem(15);
+    align-items: stretch;
+    @media (max-width:$tablet){
+      flex-direction: column;
+    }
+  }
 
   // .navigation__button
   &__button {
@@ -354,8 +435,8 @@
     &.active-tab {
       border-left: toRem(2) solid var(--primary-color);
     }
-    @media (max-width:$tablet){
-       width: 100%; 
+    @media (max-width: $tablet) {
+      width: 100%;
     }
     @media (any-hover: hover) {
       &:hover {

@@ -35,10 +35,12 @@
   justify-items: start;
   transition: all 0.3s;
   font-size: toRem(18);
+  align-items: center;
   color: var(--primary-color);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: toRem(1.35);
+  width: 100%;
   @media (any-hover: hover) {
     &:hover {
       background-color: var(--primary-color);
