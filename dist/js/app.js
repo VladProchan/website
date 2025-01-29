@@ -202,10 +202,14 @@
         }
     }
     function menuInit() {
+        var block = document.querySelector(".profile__description");
+        var button = document.querySelector(".menu__about-icon");
         if (document.querySelector(".icon-menu")) document.addEventListener("click", (function(e) {
             if (bodyLockStatus && e.target.closest(".icon-menu")) {
                 bodyLockToggle();
                 document.documentElement.classList.toggle("menu-open");
+                block.classList.remove("active-info");
+                button.classList.remove("active-info");
             }
         }));
         if (document.querySelector(".icon-menu-close")) document.addEventListener("click", (function(e) {
@@ -406,6 +410,7 @@
         var button = document.querySelector(".menu__about-icon");
         block.classList.toggle("active-info");
         button.classList.toggle("active-info");
+        document.documentElement.classList.remove("menu-open");
     }));
     document.querySelector(".description-profile__icon-close").addEventListener("click", (function() {
         var block = document.querySelector(".profile__description");

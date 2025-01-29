@@ -417,11 +417,15 @@ export function tabs() {
 }
 // Модуль роботи з меню (бургер) =======================================================================================================================================================================================================================
 export function menuInit() {
+  var block = document.querySelector('.profile__description');
+  var button = document.querySelector('.menu__about-icon');
 	if (document.querySelector(".icon-menu")) {
 		document.addEventListener("click", function (e) {
 			if (bodyLockStatus && e.target.closest('.icon-menu')) {
 				bodyLockToggle();
-				document.documentElement.classList.toggle("menu-open");
+        document.documentElement.classList.toggle("menu-open");
+        block.classList.remove('active-info');
+        button.classList.remove('active-info');
 			}
 		});
   };

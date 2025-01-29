@@ -90,6 +90,7 @@ document.querySelector('.menu__about-icon').addEventListener('click', function()
   var button = document.querySelector('.menu__about-icon');
   block.classList.toggle('active-info');
   button.classList.toggle('active-info');
+  document.documentElement.classList.remove("menu-open");
 });
 document.querySelector('.description-profile__icon-close').addEventListener('click', function() {
   var block = document.querySelector('.profile__description');
