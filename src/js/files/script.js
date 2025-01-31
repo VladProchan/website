@@ -98,3 +98,10 @@ document.querySelector('.description-profile__icon-close').addEventListener('cli
   block.classList.toggle('active-info');
   button.classList.toggle('active-info');
 });
+//========================================================================================================================================================
+document.querySelector('.item-description-profile__button').addEventListener('click', function() {
+  document.documentElement.classList.add("rotate");
+});
+document.querySelector('.social__button').addEventListener('click', function() {
+  document.documentElement.classList.remove("rotate");
+});

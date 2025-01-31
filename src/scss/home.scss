@@ -5,6 +5,9 @@
   position: relative;
   padding-inline: toRem(80);
   padding-block: toRem(92);
+  transition: all 0.3s;
+  transform: rotateY(0deg);
+  will-change: transform;
   @media (max-width: $tablet) {
     padding-inline: toRem(24);
     padding-block-start: toRem(92);
@@ -13,6 +16,16 @@
   @media (max-width: $mobile) {
     padding-inline: toRem(9);
     padding-block: toRem(9);
+  }
+  .rotate & {
+    transform-origin: right center; /* Точка обертання - ліва сторона */
+    transform: rotateY(-30deg); /* Нахил у середину */
+    transition: transform 0.3s ease;
+    will-change: transform;
+    backface-visibility: hidden;
+    filter: blur(toRem(1.1));
+    pointer-events: none;
+    user-select: none;
   }
   &__wrap {
     @media (min-width: $tablet) {
@@ -89,25 +102,23 @@
   }
   // .profile__description
   &__description {
+    flex: 1 1 auto;
     @media (max-width: $mobile) {
       display: flex;
       position: fixed;
-			width: 100%;
-			height: 100%;
-			left: 100%;
-			top: 0;
-			transition: left 0.3s;
+      width: 100%;
+      height: 100%;
+      left: 100%;
+      top: 0;
+      transition: left 0.3s;
       padding: toRem(8) toRem(8) toRem(51) toRem(8);
       z-index: 5;
-			&.active-info {
-				left: 0;
-			}
+      &.active-info {
+        left: 0;
+      }
     }
-
   }
-  &__wrap{
-    
-
+  &__wrap {
   }
   // .profile__motto
   &__motto {
@@ -127,18 +138,21 @@
     flex-direction: column;
     gap: toRem(4);
   }
-  &__wrap{
-    border: toRem(1) solid var(--border-color);
-    background: var(--bg-color);
-    padding: toRem(0) toRem(21) toRem(21) toRem(21);
-    height: 100%;
-    width: 100%;
-  }
-  &__header{
-    @media (min-width:$mobile){
-       display: none; 
+  &__wrap {
+    @media (max-width: $mobile) {
+      border: toRem(1) solid var(--border-color);
+      background: var(--bg-color);
+      padding: toRem(0) toRem(21) toRem(21) toRem(21);
+      height: 100%;
+      width: 100%;
+      transition: all 0.3s;
     }
-    @media (max-width:$mobile){
+  }
+  &__header {
+    @media (min-width: $mobile) {
+      display: none;
+    }
+    @media (max-width: $mobile) {
       display: flex;
       height: toRem(50);
       align-items: center;
@@ -150,15 +164,15 @@
       @media (min-width: $mobile) {
         display: none;
       }
-      svg{
-        path{
-            fill: var(--white-text-color);
-            transition: fill 0.3s;
+      svg {
+        path {
+          fill: var(--white-text-color);
+          transition: fill 0.3s;
         }
       }
     }
   }
-  &__list{
+  &__list {
     display: flex;
     flex-direction: column;
     gap: toRem(22);
@@ -167,12 +181,12 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
     }
-    @media (max-width:$mobile){
+    @media (max-width: $mobile) {
       display: flex;
       padding-block-start: toRem(21);
     }
   }
-  &__name-block{
+  &__name-block {
     color: var(--white-text-color);
     font-weight: 700;
     text-transform: uppercase;
@@ -227,12 +241,21 @@
     position: relative;
     width: 100%;
     min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   &__section {
     display: none;
     &.active-tab {
       display: block;
     }
+  }
+  &__hi{
+    font-size: toRem(150);
+    font-weight: 700;
+    color: var(--primary-color);
+    text-align: center;
   }
 }
 
@@ -388,10 +411,10 @@
     @media (min-width: $mobile) {
       display: none;
     }
-    svg{
-      path{
-          fill: var(--white-text-color);
-          transition: fill 0.3s;
+    svg {
+      path {
+        fill: var(--white-text-color);
+        transition: fill 0.3s;
       }
     }
   }
@@ -420,7 +443,7 @@
     align-items: center;
     gap: toRem(15);
     align-items: stretch;
-    @media (max-width:$tablet){
+    @media (max-width: $tablet) {
       flex-direction: column;
     }
   }
@@ -469,5 +492,116 @@
     display: flex;
     flex: 1 1 auto;
     text-align: left;
+  }
+}
+//========================================================================================================================================================
+.social {
+  position: absolute;
+  top: 50%;
+  left: -100%;
+  transform: translate(0, -50%);
+  transition: left 0.4s;
+  .rotate & {
+    left: toRem(156);
+  }
+  // .social__title
+  &__title {
+    color: var(--white-text-color);
+    font-size: toRem(18);
+    font-weight: 700;
+    letter-spacing: toRem(1.35);
+    text-transform: uppercase;
+    margin-block-end: toRem(8);
+  }
+  // .social__sub-ttile
+  &__sub-ttile {
+    font-family: "Iceland";
+    font-size: toRem(16);
+    letter-spacing: toRem(1.2);
+    text-transform: uppercase;
+    margin-block-end: toRem(15);
+  }
+  // .social__wrap
+  &__wrap {
+    background-color: rgba(232, 74, 74, 0.09);
+    border: toRem(1) solid rgba(255, 255, 255, 0.13);
+    backdrop-filter: blur(toRem(6.5));
+    padding-inline: toRem(27);
+    padding-block: toRem(27);
+    max-width: toRem(430);
+    font-size: toRem(0);
+    display: grid;
+    grid-template-columns: repeat(4, toRem(80));
+    gap: toRem(15);
+    justify-content: space-between;
+    margin-block-end: toRem(15);
+  }
+  // .social__image
+  &__image {
+    position: relative;
+    width: toRem(80);
+    aspect-ratio: 1 / 1;
+    @media (any-hover: hover) {
+      &:hover {
+        .image-social__poligon {
+          svg {
+            path {
+              fill: var(--primary-color);
+            }
+          }
+        }
+        .image-social__icon {
+          svg {
+            fill: var(--black-text-color);
+            path {
+              fill: var(--black-text-color);
+            }
+          }
+        }
+      }
+    }
+  }
+  // .social__button
+  &__button {
+    justify-content: center;
+  }
+}
+.image-social {
+  // .image-social__poligon
+  &__poligon {
+    svg {
+      width: 100%;
+      height: 100%;
+      path {
+        stroke: var(--primary-color);
+        fill: transparent;
+        transition: all 0.3s;
+      }
+    }
+  }
+  // .image-social__icon
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    width: toRem(40);
+    height: toRem(40);
+    transform: translate(-50%, -50%);
+    object-fit: contain;
+    svg {
+      width: 100%;
+      height: 100%;
+      fill: var(--primary-color);
+      transition: all 0.3s;
+      path {
+        fill: var(--primary-color);
+        transition: all 0.3s;
+      }
+    }
   }
 }

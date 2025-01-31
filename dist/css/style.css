@@ -120,6 +120,8 @@ body {
   overscroll-behavior: none
 }
 .wrapper {
+  -webkit-perspective: 62.5rem;
+  perspective: 62.5rem;
   position: relative;
   display: flex;
   flex-direction: column
@@ -363,7 +365,29 @@ body {
   overflow: auto;
   position: relative;
   padding-inline: 5rem;
-  padding-block: 5.75rem
+  padding-block: 5.75rem;
+  transition: all .3s;
+  -webkit-transform: rotateY(0);
+  transform: rotateY(0);
+  will-change: transform
+}
+.rotate .page {
+  -webkit-transform-origin: right center;
+  transform-origin: right center;
+  -webkit-transform: rotateY(-30deg);
+  transform: rotateY(-30deg);
+  transition: -webkit-transform .3s ease;
+  transition: transform .3s ease;
+  transition: transform .3s ease,-webkit-transform .3s ease;
+  will-change: transform;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-filter: blur(.06875rem);
+  filter: blur(.06875rem);
+  pointer-events: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none
 }
 .page__wrap {
   position: relative
@@ -397,6 +421,9 @@ body {
   width: 10.25rem;
   aspect-ratio: 1/1
 }
+.profile__description {
+  flex: 1 1 auto
+}
 .profile__motto {
   display: flex;
   flex-direction: column;
@@ -406,13 +433,6 @@ body {
   display: flex;
   flex-direction: column;
   gap: .25rem
-}
-.description-profile__wrap {
-  border: .0625rem solid var(--border-color);
-  background: var(--bg-color);
-  padding: 0 1.3125rem 1.3125rem 1.3125rem;
-  height: 100%;
-  width: 100%
 }
 .description-profile__list {
   display: flex;
@@ -464,13 +484,22 @@ body {
   border: .0625rem solid var(--border-opaciti-color);
   position: relative;
   width: 100%;
-  min-height: 100%
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center
 }
 .main__section {
   display: none
 }
 .main__section.active-tab {
   display: block
+}
+.main__hi {
+  font-size: 9.375rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  text-align: center
 }
 .info__about {
   border-left: .125rem solid var(--primary-color)
@@ -653,6 +682,92 @@ body {
   flex: 1 1 auto;
   text-align: left
 }
+.social {
+  position: absolute;
+  top: 50%;
+  left: -100%;
+  -webkit-transform: translate(0,-50%);
+  transform: translate(0,-50%);
+  transition: left .4s
+}
+.rotate .social {
+  left: 9.75rem
+}
+.social__title {
+  color: var(--white-text-color);
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: .084375rem;
+  text-transform: uppercase;
+  -webkit-margin-after: .5rem;
+  margin-block-end: .5rem
+}
+.social__sub-ttile {
+  font-family: Iceland;
+  font-size: 1rem;
+  letter-spacing: .075rem;
+  text-transform: uppercase;
+  -webkit-margin-after: .9375rem;
+  margin-block-end: .9375rem
+}
+.social__wrap {
+  background-color: rgba(232,74,74,.09);
+  border: .0625rem solid rgba(255,255,255,.13);
+  backdrop-filter: blur(.40625rem);
+  padding-inline: 1.6875rem;
+  padding-block: 1.6875rem;
+  max-width: 26.875rem;
+  font-size: 0;
+  display: grid;
+  grid-template-columns: repeat(4,5rem);
+  gap: .9375rem;
+  justify-content: space-between;
+  -webkit-margin-after: .9375rem;
+  margin-block-end: .9375rem
+}
+.social__image {
+  position: relative;
+  width: 5rem;
+  aspect-ratio: 1/1
+}
+.social__button {
+  justify-content: center
+}
+.image-social__poligon svg {
+  width: 100%;
+  height: 100%
+}
+.image-social__poligon svg path {
+  stroke: var(--primary-color);
+  fill: transparent;
+  transition: all .3s
+}
+.image-social__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  -o-object-fit: contain;
+  object-fit: contain
+}
+.image-social__icon svg {
+  width: 100%;
+  height: 100%;
+  fill: var(--primary-color);
+  transition: all .3s
+}
+.image-social__icon svg path {
+  fill: var(--primary-color);
+  transition: all .3s
+}
 @media (min-width:47.99875em) {
   .description-profile__header {
     display: none
@@ -825,6 +940,14 @@ body {
   .profile__description.active-info {
     left: 0
   }
+  .description-profile__wrap {
+    border: .0625rem solid var(--border-color);
+    background: var(--bg-color);
+    padding: 0 1.3125rem 1.3125rem 1.3125rem;
+    height: 100%;
+    width: 100%;
+    transition: all .3s
+  }
   .description-profile__header {
     display: flex;
     height: 3.125rem;
@@ -864,5 +987,14 @@ body {
   }
   .navigation__button:hover .hexagon-decor {
     background: var(--primari-opaciti07-color)
+  }
+  .social__image:hover .image-social__poligon svg path {
+    fill: var(--primary-color)
+  }
+  .social__image:hover .image-social__icon svg {
+    fill: var(--black-text-color)
+  }
+  .social__image:hover .image-social__icon svg path {
+    fill: var(--black-text-color)
   }
 }
