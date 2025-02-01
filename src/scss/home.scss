@@ -32,6 +32,7 @@
       min-height: 100%;
       display: grid;
       grid-template-columns: toRem(200) 1fr toRem(200);
+      grid-auto-rows: calc(100vh - toRem(92 * 2));
       gap: toRem(16);
     }
     @media (max-width: $tablet) {
@@ -240,19 +241,22 @@
     border: toRem(1) solid var(--border-opaciti-color);
     position: relative;
     width: 100%;
-    min-height: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
   }
   &__section {
     display: none;
+    overflow: auto;
+    width: 100%;
+    height: 100%;
     &.active-tab {
       display: block;
     }
   }
-  &__hi{
-    font-size: toRem(150);
+  &__hi {
+    font-size: toRem(60);
     font-weight: 700;
     color: var(--primary-color);
     text-align: center;
@@ -498,11 +502,30 @@
 .social {
   position: absolute;
   top: 50%;
-  left: -100%;
+  left: -150%;
   transform: translate(0, -50%);
   transition: left 0.4s;
+  @media (max-width: $mobile) {
+    width: 100%;
+    height: 100%;
+    padding: toRem(8);
+    backdrop-filter: blur(toRem(6.5));
+  }
   .rotate & {
-    left: toRem(156);
+    left: toRem(80);
+    @media (max-width: $mobile) {
+      left: 0;
+    }
+  }
+  &__content {
+    @media (max-width: $mobile) {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      padding: toRem(8);
+      border: toRem(1) solid var(--border-color);
+      background-color: var(--bg-color);
+    }
   }
   // .social__title
   &__title {
@@ -532,9 +555,15 @@
     font-size: toRem(0);
     display: grid;
     grid-template-columns: repeat(4, toRem(80));
+    grid-auto-rows: toRem(90);
     gap: toRem(15);
     justify-content: space-between;
     margin-block-end: toRem(15);
+    @media (max-width: $mobile) {
+      grid-template-columns: repeat(3, toRem(80));
+      grid-auto-rows: toRem(100);
+      flex: 1 1 auto;
+    }
   }
   // .social__image
   &__image {
@@ -564,6 +593,10 @@
   // .social__button
   &__button {
     justify-content: center;
+    @media (max-width: $mobile) {
+      background-color: var(--primary-color);
+      color: var(--black-text-color);
+    }
   }
 }
 .image-social {
