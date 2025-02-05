@@ -1,10 +1,9 @@
 // Заголовки, загальні БЕМ блоки та інше...
 .hexagon-decor {
-  background: var(--gray-opaciti07-color); /* Колір фону */
-  color: var(--black-color);
+  background: var(--bg-gray);
+  color: var(--text-black);
   padding-inline: toRem(4);
   padding-block: toRem(4);
-  transition: all 0.3s;
   position: relative;
   overflow: hidden;
   transition: all 0.3s;
@@ -14,37 +13,39 @@
     right: toRem(-10);
     width: toRem(40);
     height: toRem(40);
-    fill: var(--black-text-color);
+    fill: var(--decor-black);
     transition: all 0.3s;
-
   }
   .active-tab & {
-    background: var(--primari-opaciti07-color); /* Колір фону */
-    color: var(--white-text-color);
+    background: var(--bg-red-opaciti07); /* Колір фону */
+    color: var(--text-title-white);
+    transition: all 0.3s;
   }
   &--red{
-    background: var(--primari-opaciti07-color);
+    background: var(--bg-red-opaciti07);
+    transition: all 0.3s;
   }
 }
 
 .button {
   padding-inline: toRem(4);
   padding-block: toRem(4);
-  border: toRem(1) solid var(--primary-color);
+  border: toRem(1) solid var(--border-red);
   display: flex;
   justify-items: start;
   transition: all 0.3s;
   font-size: toRem(18);
   align-items: center;
-  color: var(--primary-color);
+  color: var(--text-red);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: toRem(1.35);
   width: 100%;
+  transition: all 0.3s;
   @media (any-hover: hover) {
     &:hover {
-      background-color: var(--primary-color);
-      color: var(--black-color);
+      background-color: var(--bg-red);
+      color: var(--text-black);
     }
   }
 }
@@ -59,7 +60,7 @@
   z-index: -1;
   svg {
     path {
-      stroke: var(--primary-color);
+      stroke: var(--border-red);
     }
   }
   // .decor-avatar-profile__01

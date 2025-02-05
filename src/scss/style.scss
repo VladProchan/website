@@ -68,7 +68,7 @@ body {
   transition: all 0.3s;
   // scrollbar-gutter: stable;
   // Скролл заблоковано
-  background-color: var(--bg-color);
+  background-color: var(--bg-black);
   .lock & {
     overflow: hidden;
     touch-action: none;
@@ -89,13 +89,14 @@ body {
     aspect-ratio: 1/1;
     background: radial-gradient(
       circle,
-      rgba(252, 70, 107, 0.3) 0%,
+      var(--bg-red-opaciti03) 0%,
       rgba(63, 94, 251, 0) 60%
     );
     z-index: -1;
     top: 0; /* Центр по вертикалі */
     right: 0; /* Центр по горизонталі */
     transform: translate(50%, -50%);
+    transition: all 0.3s;
   }
   &::before {
     content: "";
@@ -104,13 +105,14 @@ body {
     aspect-ratio: 1/1;
     background: radial-gradient(
       circle,
-      rgba(252, 70, 107, 0.3) 0%,
+      var(--bg-red-opaciti03) 0%,
       rgba(63, 94, 251, 0) 60%
     );
     z-index: -1;
     bottom: 0; /* Центр по вертикалі */
     left: 0; /* Центр по горизонталі */
     transform: translate(-50%, 50%);
+    transition: all 0.3s;
   }
   display: flex;
   flex-direction: column;

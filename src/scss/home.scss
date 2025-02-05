@@ -81,7 +81,7 @@
   // .profile__avatar
   &__avatar {
     position: relative;
-    border: toRem(1) solid var(--border-opaciti-color);
+    border: toRem(1) solid var(--border-gray);
     width: 100%;
     aspect-ratio: 1 / 1;
     display: flex;
@@ -141,8 +141,8 @@
   }
   &__wrap {
     @media (max-width: $mobile) {
-      border: toRem(1) solid var(--border-color);
-      background: var(--bg-color);
+      border: toRem(1) solid var(--border-gray);
+      background: var(--bg-black);
       padding: toRem(0) toRem(21) toRem(21) toRem(21);
       height: 100%;
       width: 100%;
@@ -167,7 +167,7 @@
       }
       svg {
         path {
-          fill: var(--white-text-color);
+          fill: var(--text-white);
           transition: fill 0.3s;
         }
       }
@@ -188,7 +188,7 @@
     }
   }
   &__name-block {
-    color: var(--white-text-color);
+    color: var(--text-white);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: toRem(2);
@@ -201,20 +201,22 @@
   &__lable {
     font-size: toRem(14);
     font-family: "Iceland";
-    color: var(--white-text-color);
+    color: var(--text-white);
     letter-spacing: toRem(1);
     text-transform: uppercase;
-    transition: all 0.3s;
+    transition: color 0.3s;
   }
   // .item-description-profile__characteristic
   &__characteristic {
     font-size: toRem(18);
-    color: var(--primary-text-color);
+    color: var(--text-red);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: toRem(1.35);
+    transition: color 0.3s;
     &--black {
-      color: var(--black-text-color);
+      color: var(--text-black);
+      transition: color 0.3s;
     }
   }
 }
@@ -223,22 +225,25 @@
   // .motto-profile__lable
   &__lable {
     font-size: toRem(18);
-    color: var(--primary-text-color);
+    color: var(--text-red);
     text-transform: uppercase;
     letter-spacing: toRem(1.35);
+    transition: color 0.3s;
   }
   // .motto-profile__text
   &__text {
     font-size: toRem(16);
     letter-spacing: toRem(1.2);
     text-transform: uppercase;
+    color: var(--text-gray);
+    transition: color 0.3s;
   }
 }
 //========================================================================================================================================================
 .main {
   // .main__content
   &__content {
-    border: toRem(1) solid var(--border-opaciti-color);
+    border: toRem(1) solid var(--border-gray);
     position: relative;
     width: 100%;
     height: 100%;
@@ -258,8 +263,9 @@
   &__hi {
     font-size: toRem(60);
     font-weight: 700;
-    color: var(--primary-color);
+    color: var(--text-red);
     text-align: center;
+    transition: color 0.3s;
   }
 }
 
@@ -267,7 +273,8 @@
 .info {
   // .info__about
   &__about {
-    border-left: toRem(2) solid var(--primary-color);
+    border-left: toRem(2) solid var(--border-red);
+    transition: all 0.3s;
   }
   // .info__buttons
   &__settings {
@@ -282,22 +289,25 @@
 .about-info {
   // .about-info__title
   &__title {
-    color: var(--white-text-color);
+    color: var(--text-title-white);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: toRem(1.35);
     font-size: toRem(18);
     padding-inline-start: toRem(10);
+    transition: color 0.3s;
   }
   // .about-info__sub-title
   &__sub-title {
     font-family: "Iceland";
     font-size: toRem(14);
-    background: var(--primari-opaciti01-color);
+    background: var(--bg-red-opaciti01);
     padding-block: toRem(8);
     padding-inline-start: toRem(10);
     text-transform: uppercase;
     margin-block-end: toRem(15);
+    color: var(--text-gray);
+    transition: color 0.3s;
   }
   // .about-info__item
   &__item {
@@ -316,23 +326,26 @@
   &__lable {
     font-size: toRem(14);
     font-family: "Iceland";
-    color: var(--white-text-color);
+    color: var(--text-white);
     letter-spacing: toRem(1);
     text-transform: uppercase;
-    transition: all 0.3s;
+    transition: color 0.3s;
   }
   // .item-about-info__characteristic
   &__characteristic {
     font-size: toRem(18);
-    color: var(--primary-text-color);
+    color: var(--text-red);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: toRem(1.35);
+    transition: color 0.3s;
   }
   // .item-about-info__text
   &__text {
     font-family: "Iceland";
     text-transform: uppercase;
+    color: var(--text-gray);
+    transition: color 0.3s;
   }
   // .item-about-info__wrap
   &__wrap {
@@ -357,7 +370,8 @@
       width: 100%;
       height: 100%;
       path {
-        stroke: var(--primary-color);
+        stroke: var(--icon-red);
+        transition: all 0.3s;
       }
     }
   }
@@ -376,9 +390,11 @@
     transform: translate(-50%, -50%);
     object-fit: contain;
     svg {
-      fill: var(--primary-color);
+      fill: var(--icon-red);
+      transition: all 0.3s;
       path {
-        fill: var(--primary-color);
+        fill: var(--icon-red);
+        transition: all 0.3s;
       }
     }
   }
@@ -393,9 +409,10 @@
   &__lable {
     font-size: toRem(14);
     font-family: "Iceland";
-    color: var(--white-text-color);
+    color: var(--text-white);
     letter-spacing: toRem(1);
     text-transform: uppercase;
+    transition: color 0.3s;
   }
 }
 //========================================================================================================================================================
@@ -408,7 +425,7 @@
     display: flex;
     height: toRem(50);
     align-items: center;
-    border-bottom: toRem(1) solid var(--border-color);
+    border-bottom: toRem(1) solid var(--border-gray);
     width: calc(100% + toRem(42));
     padding-inline: toRem(21);
     justify-content: space-between;
@@ -417,13 +434,13 @@
     }
     svg {
       path {
-        fill: var(--white-text-color);
+        fill: var(--text-white);
         transition: fill 0.3s;
       }
     }
   }
   &__name-block {
-    color: var(--white-text-color);
+    color: var(--text-title-white);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: toRem(2);
@@ -431,12 +448,12 @@
     transition: color 0.3s;
   }
   @media (max-width: $tablet) {
-    background-color: var(--bg-color);
+    background-color: var(--bg-black);
     padding: toRem(0) toRem(21) toRem(21) toRem(21);
     height: 100%;
     flex-direction: column;
     align-items: center;
-    border: toRem(1) solid var(--border-color);
+    border: toRem(1) solid var(--border-gray);
     transition: all 0.3s;
   }
 
@@ -456,20 +473,22 @@
   &__button {
     display: flex;
     flex-direction: column;
-    border-left: toRem(2) solid var(--gray-opaciti07-color);
+    border-left: toRem(2) solid var(--border-gray);
     width: toRem(150);
     transition: all 0.3s;
     &.active-tab {
-      border-left: toRem(2) solid var(--primary-color);
+      border-left: toRem(2) solid var(--border-red);
     }
     @media (max-width: $tablet) {
       width: 100%;
     }
     @media (any-hover: hover) {
       &:hover {
-        border-left: toRem(2) solid var(--primary-color);
+        border-left: toRem(2) solid var(--border-red);
+        transition: all 0.3s;
         .hexagon-decor {
-          background: var(--primari-opaciti07-color); /* Колір фону */
+          background: var(--bg-red-opaciti07);
+          transition: all 0.3s;
         }
       }
     }
@@ -478,12 +497,13 @@
   &__title {
     width: 100%;
     display: flex;
-    color: var(--white-text-color);
+    color: var(--text-title-white);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: toRem(1.35);
     font-size: toRem(18);
     padding-inline-start: toRem(8);
+    transition: all 0.3s;
   }
   // .navigation__sub-title
   &__sub-title {
@@ -491,11 +511,12 @@
     padding-block: toRem(8);
     font-family: "Iceland";
     font-size: toRem(14);
-    background-color: var(--gray-opaciti01-color);
+    background-color: var(--bg-gray-opaciti01);
     width: 100%;
     display: flex;
     flex: 1 1 auto;
     text-align: left;
+    color: var(--text-gray);
   }
 }
 //========================================================================================================================================================
@@ -523,18 +544,19 @@
       flex-direction: column;
       height: 100%;
       padding: toRem(8);
-      border: toRem(1) solid var(--border-color);
-      background-color: var(--bg-color);
+      border: toRem(1) solid var(--border-gray);
+      background-color: var(--bg-black);
     }
   }
   // .social__title
   &__title {
-    color: var(--white-text-color);
+    color: var(--text-title-white);
     font-size: toRem(18);
     font-weight: 700;
     letter-spacing: toRem(1.35);
     text-transform: uppercase;
     margin-block-end: toRem(8);
+    transition: color 0.3s;
   }
   // .social__sub-ttile
   &__sub-ttile {
@@ -543,11 +565,13 @@
     letter-spacing: toRem(1.2);
     text-transform: uppercase;
     margin-block-end: toRem(15);
+    color: var(--text-gray);
+    transition: color 0.3s;
   }
   // .social__wrap
   &__wrap {
-    background-color: rgba(232, 74, 74, 0.09);
-    border: toRem(1) solid rgba(255, 255, 255, 0.13);
+    background-color: var(--bg--black-red);
+    border: toRem(1) solid var(--border-gray);
     backdrop-filter: blur(toRem(6.5));
     padding-inline: toRem(27);
     padding-block: toRem(27);
@@ -559,10 +583,12 @@
     gap: toRem(15);
     justify-content: space-between;
     margin-block-end: toRem(15);
+    transition: all 0.3s;
     @media (max-width: $mobile) {
       grid-template-columns: repeat(3, toRem(80));
       grid-auto-rows: toRem(100);
       flex: 1 1 auto;
+      max-width: 100%;
     }
   }
   // .social__image
@@ -575,15 +601,15 @@
         .image-social__poligon {
           svg {
             path {
-              fill: var(--primary-color);
+              fill: var(--icon-red);
             }
           }
         }
         .image-social__icon {
           svg {
-            fill: var(--black-text-color);
+            fill: var(--bg--black-red);
             path {
-              fill: var(--black-text-color);
+              fill: var(--bg--black-red);
             }
           }
         }
@@ -594,8 +620,8 @@
   &__button {
     justify-content: center;
     @media (max-width: $mobile) {
-      background-color: var(--primary-color);
-      color: var(--black-text-color);
+      background-color: var(--bg-red);
+      color: var(--text-black);
     }
   }
 }
@@ -606,7 +632,7 @@
       width: 100%;
       height: 100%;
       path {
-        stroke: var(--primary-color);
+        stroke: var(--icon-red);
         fill: transparent;
         transition: all 0.3s;
       }
@@ -629,10 +655,10 @@
     svg {
       width: 100%;
       height: 100%;
-      fill: var(--primary-color);
+      fill: var(--icon-red);
       transition: all 0.3s;
       path {
-        fill: var(--primary-color);
+        fill: var(--icon-red);
         transition: all 0.3s;
       }
     }

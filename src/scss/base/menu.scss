@@ -12,16 +12,17 @@
     gap: toRem(7);
   }
   &__about-icon{
-    border: toRem(1) solid var(--primary-color);
+    border: toRem(1) solid var(--border-red);
     transition: all 0.3s;
     font-size: toRem(18);
-    color: var(--primary-color);
+    color: var(--text-red);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: toRem(1.35);
     width: 100%;
     z-index: 5;
     position: relative;
+    transition: all 0.3s;
     @media (max-width:$tablet){
       padding-block: toRem(15);
     }
@@ -39,7 +40,7 @@
       transform: translate(-50%, 0);
       width: toRem(9);
       height: toRem(9);
-      background: var(--primary-color);
+      background: var(--border-red);
       clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
       transition: all 0.3s;
       opacity: 0;
@@ -99,8 +100,8 @@
 		display: block;
 		position: relative;
 		z-index: 5;
-		background-color: var(--primary-color);
-    color: var(--black-text-color);
+		background-color: var(--bg-red);
+    color: var(--text-black);
     padding-block: toRem(15);
     width: 100%;
     font-size: toRem(18);
@@ -115,7 +116,7 @@
       transform: translate(-50%, 0);
       width: toRem(9);
       height: toRem(9);
-      background: var(--primary-color);
+      background: var(--border-red);
       clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
       transition: all 0.3s;
       opacity: 0;

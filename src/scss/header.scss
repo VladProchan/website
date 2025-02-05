@@ -41,13 +41,15 @@
   &__number {
     font-size: toRem(26);
     letter-spacing: toRem(2);
-    color: var(--green-color);
-    transition: all 0.3s;
+    color: var(--text-green);
+    transition: color 0.3s;
   }
   // .item-header__text
   &__text {
     text-transform: uppercase;
     letter-spacing: toRem(1.2);
+    color: var(--text-gray);
+    transition: color 0.3s;
   }
 }
 .clock-header {
@@ -56,10 +58,12 @@
   &__text {
     text-transform: uppercase;
     font-size: toRem(14);
+    color: var(--text-gray);
+    transition: color 0.3s;
   }
   // .clock-header__time
   &__time {
-    color: var(--white-text-color);
-    transition: all 0.3s;
+    color: var(--text-white);
+    transition: color 0.3s;
   }
 }
