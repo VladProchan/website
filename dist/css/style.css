@@ -1,5 +1,5 @@
 @import url(https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@100..900&family=Iceland&display=swap);
-/*! tailwindcss v4.0.0 | MIT License | https://tailwindcss.com */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800; 1,100..800&display=swap');
 :root {
   --text-white: #fff;
   --text-red: rgba(232, 74, 74, 1);
@@ -64,7 +64,7 @@ html {
 body {
   color: var(--text-color);
   line-height: 1;
-  font-family: "Big Shoulders Display";
+  font-family: "JetBrains Mono";
   font-size: 1rem;
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
@@ -75,7 +75,7 @@ body {
 button,
 input,
 textarea {
-  font-family: "Big Shoulders Display";
+  font-family: "JetBrains Mono";
   font-size: inherit;
   line-height: inherit;
   color: inherit;
@@ -360,18 +360,16 @@ body {
   color: var(--text-gray);
   transition: color .3s
 }
-.clock-header {
-  font-family: Iceland
-}
 .clock-header__text {
   text-transform: uppercase;
-  font-size: .875rem;
+  font-size: .75rem;
   color: var(--text-gray);
   transition: color .3s
 }
 .clock-header__time {
   color: var(--text-white);
-  transition: color .3s
+  transition: color .3s;
+  font-size: .75rem
 }
 .page {
   height: 100svh;
@@ -462,10 +460,8 @@ body {
   transition: color .3s
 }
 .item-description-profile__lable {
-  font-size: .875rem;
-  font-family: Iceland;
+  font-size: .75rem;
   color: var(--text-white);
-  letter-spacing: .0625rem;
   text-transform: uppercase;
   transition: color .3s
 }
@@ -474,26 +470,20 @@ body {
   color: var(--text-red);
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: .084375rem;
   transition: color .3s
 }
 .item-description-profile__characteristic--black {
   color: var(--text-black);
   transition: color .3s
 }
-.motto-profile {
-  font-family: Iceland
-}
 .motto-profile__lable {
-  font-size: 1.125rem;
+  font-size: .75rem;
   color: var(--text-red);
   text-transform: uppercase;
-  letter-spacing: .084375rem;
   transition: color .3s
 }
 .motto-profile__text {
-  font-size: 1rem;
-  letter-spacing: .075rem;
+  font-size: .875rem;
   text-transform: uppercase;
   color: var(--text-gray);
   transition: color .3s
@@ -536,15 +526,13 @@ body {
   color: var(--text-title-white);
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: .084375rem;
   font-size: 1.125rem;
   -webkit-padding-start: .625rem;
   padding-inline-start: .625rem;
   transition: color .3s
 }
 .about-info__sub-title {
-  font-family: Iceland;
-  font-size: .875rem;
+  font-size: .75rem;
   background: var(--bg-red-opaciti01);
   padding-block: .5rem;
   -webkit-padding-start: .625rem;
@@ -567,8 +555,7 @@ body {
   margin-block-end: 1.4375rem
 }
 .item-about-info__lable {
-  font-size: .875rem;
-  font-family: Iceland;
+  font-size: .75rem;
   color: var(--text-white);
   letter-spacing: .0625rem;
   text-transform: uppercase;
@@ -579,14 +566,13 @@ body {
   color: var(--text-red);
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: .084375rem;
   transition: color .3s
 }
 .item-about-info__text {
-  font-family: Iceland;
   text-transform: uppercase;
   color: var(--text-gray);
-  transition: color .3s
+  transition: color .3s;
+  font-size: .875rem
 }
 .item-about-info__wrap {
   display: grid;
@@ -641,8 +627,7 @@ body {
   justify-content: space-between
 }
 .settings-info__lable {
-  font-size: .875rem;
-  font-family: Iceland;
+  font-size: .75rem;
   color: var(--text-white);
   letter-spacing: .0625rem;
   text-transform: uppercase;
@@ -671,7 +656,6 @@ body {
   color: var(--text-title-white);
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: .125rem;
   font-size: 1.625rem;
   transition: color .3s
 }
@@ -687,7 +671,7 @@ body {
   display: flex;
   flex-direction: column;
   border-left: .125rem solid var(--border-gray);
-  width: 9.375rem;
+  width: 12.5rem;
   transition: all .3s
 }
 .navigation__button.active-tab {
@@ -699,7 +683,6 @@ body {
   color: var(--text-title-white);
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: .084375rem;
   font-size: 1.125rem;
   -webkit-padding-start: .5rem;
   padding-inline-start: .5rem;
@@ -708,8 +691,7 @@ body {
 .navigation__sub-title {
   padding-inline: .5rem;
   padding-block: .5rem;
-  font-family: Iceland;
-  font-size: .875rem;
+  font-size: .75rem;
   background-color: var(--bg-gray-opaciti01);
   width: 100%;
   display: flex;
@@ -739,9 +721,7 @@ body {
   transition: color .3s
 }
 .social__sub-ttile {
-  font-family: Iceland;
-  font-size: 1rem;
-  letter-spacing: .075rem;
+  font-size: .75rem;
   text-transform: uppercase;
   -webkit-margin-after: .9375rem;
   margin-block-end: .9375rem;
@@ -819,7 +799,7 @@ body {
 @media (min-width:61.99875em) {
   .menu {
     position: absolute;
-    bottom: -2.6875rem;
+    bottom: -2.5rem;
     left: 50%;
     -webkit-transform: translate(-50%,0);
     transform: translate(-50%,0);
@@ -832,7 +812,6 @@ body {
     min-height: 100%;
     display: grid;
     grid-template-columns: 12.5rem 1fr 12.5rem;
-    grid-auto-rows: calc(100vh - 11.5rem);
     gap: 1rem
   }
 }

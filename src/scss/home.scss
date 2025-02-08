@@ -32,7 +32,7 @@
       min-height: 100%;
       display: grid;
       grid-template-columns: toRem(200) 1fr toRem(200);
-      grid-auto-rows: calc(100vh - toRem(92 * 2));
+      // grid-auto-rows: calc(100vh - toRem(92 * 2));
       gap: toRem(16);
     }
     @media (max-width: $tablet) {
@@ -199,10 +199,8 @@
 .item-description-profile {
   // .item-description-profile__lable
   &__lable {
-    font-size: toRem(14);
-    font-family: "Iceland";
+    font-size: toRem(12);
     color: var(--text-white);
-    letter-spacing: toRem(1);
     text-transform: uppercase;
     transition: color 0.3s;
   }
@@ -212,7 +210,6 @@
     color: var(--text-red);
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: toRem(1.35);
     transition: color 0.3s;
     &--black {
       color: var(--text-black);
@@ -221,19 +218,16 @@
   }
 }
 .motto-profile {
-  font-family: "Iceland";
   // .motto-profile__lable
   &__lable {
-    font-size: toRem(18);
+    font-size: toRem(12);
     color: var(--text-red);
     text-transform: uppercase;
-    letter-spacing: toRem(1.35);
     transition: color 0.3s;
   }
   // .motto-profile__text
   &__text {
-    font-size: toRem(16);
-    letter-spacing: toRem(1.2);
+    font-size: toRem(14);
     text-transform: uppercase;
     color: var(--text-gray);
     transition: color 0.3s;
@@ -292,15 +286,13 @@
     color: var(--text-title-white);
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: toRem(1.35);
     font-size: toRem(18);
     padding-inline-start: toRem(10);
     transition: color 0.3s;
   }
   // .about-info__sub-title
   &__sub-title {
-    font-family: "Iceland";
-    font-size: toRem(14);
+    font-size: toRem(12);
     background: var(--bg-red-opaciti01);
     padding-block: toRem(8);
     padding-inline-start: toRem(10);
@@ -324,8 +316,7 @@
 .item-about-info {
   // .item-about-info__lable
   &__lable {
-    font-size: toRem(14);
-    font-family: "Iceland";
+    font-size: toRem(12);
     color: var(--text-white);
     letter-spacing: toRem(1);
     text-transform: uppercase;
@@ -337,15 +328,14 @@
     color: var(--text-red);
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: toRem(1.35);
     transition: color 0.3s;
   }
   // .item-about-info__text
   &__text {
-    font-family: "Iceland";
     text-transform: uppercase;
     color: var(--text-gray);
     transition: color 0.3s;
+    font-size: toRem(14);
   }
   // .item-about-info__wrap
   &__wrap {
@@ -407,8 +397,7 @@
     justify-content: space-between;
   }
   &__lable {
-    font-size: toRem(14);
-    font-family: "Iceland";
+    font-size: toRem(12);
     color: var(--text-white);
     letter-spacing: toRem(1);
     text-transform: uppercase;
@@ -443,7 +432,6 @@
     color: var(--text-title-white);
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: toRem(2);
     font-size: toRem(26);
     transition: color 0.3s;
   }
@@ -474,7 +462,7 @@
     display: flex;
     flex-direction: column;
     border-left: toRem(2) solid var(--border-gray);
-    width: toRem(150);
+    width: toRem(200);
     transition: all 0.3s;
     &.active-tab {
       border-left: toRem(2) solid var(--border-red);
@@ -500,7 +488,6 @@
     color: var(--text-title-white);
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: toRem(1.35);
     font-size: toRem(18);
     padding-inline-start: toRem(8);
     transition: all 0.3s;
@@ -509,8 +496,7 @@
   &__sub-title {
     padding-inline: toRem(8);
     padding-block: toRem(8);
-    font-family: "Iceland";
-    font-size: toRem(14);
+    font-size: toRem(12);
     background-color: var(--bg-gray-opaciti01);
     width: 100%;
     display: flex;
@@ -560,9 +546,7 @@
   }
   // .social__sub-ttile
   &__sub-ttile {
-    font-family: "Iceland";
-    font-size: toRem(16);
-    letter-spacing: toRem(1.2);
+    font-size: toRem(12);
     text-transform: uppercase;
     margin-block-end: toRem(15);
     color: var(--text-gray);

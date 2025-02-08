@@ -1,7 +1,7 @@
 .menu {
   @media (min-width:$tablet){
     position: absolute;
-    bottom: toRem(-43);
+    bottom: toRem(-40);
     left: 50%;
     transform: translate(-50%, 0);
     z-index: 5;
